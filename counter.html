@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="counterApp">
+<head>
+ <meta charset="UTF-8">
+ <title>Counter App</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="CounterController">
+ <div>
+ <button ng-click="incrementCounter()">Increment Counter</button>
+ </div>
+ <div>
+ <h2>Counter Value: {{ counter }}</h2>
+ </div>
+ <script>
+ angular.module('counterApp', [])
+ .controller('CounterController', function($scope) {
+ $scope.counter = 0;
+ $scope.incrementCounter = function() {
+ $scope.counter++;
+ };
+ });
+ </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="greetingApp">
+<head>
+ <meta charset="UTF-8">
+ <title>Greeting App</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="GreetingController">
+ <div>
+ <label for="studentName">Enter student's name:</label>
+ <input type="text" id="studentName" ng-model="studentName" placeholder="Student's name">
+ </div>
+ <div>
+ <h1>{{ studentName ? 'Hello, ' + studentName + '!' : 'Please enter a name.' }}</h1>
+ </div>
+ <script>
+ angular.module('greetingApp', [])
+ .controller('GreetingController', function($scope) {
+ $scope.studentName = '';
+ });
+ </script>
+</body>
+</html>
